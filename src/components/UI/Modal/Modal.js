@@ -4,7 +4,7 @@ This is a functional component which creates a modal.
 import React, { Component } from 'react';
 import styles from './Modal.module.css';
 
-import Aux from '../../../hoc/Aux';
+import Aux from '../../../hoc/Aux/Aux';
 import Backdrop from '../Backdrop/Backdrop';
 
 class Modal extends Component {
