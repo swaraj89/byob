@@ -9,17 +9,25 @@ import styles from "./Layout.module.css"
 class Layout extends Component {
 
     state = {
-        shouldOpenSideDrawer: true
+        shouldOpenSideDrawer: false
     }
 
     sideDrawerCloseHandler = () => {
         this.setState({ shouldOpenSideDrawer: false })
     }
 
+    hamburgerClickHandler = () => {
+        this.setState((prevState) => {
+            return { shouldOpenSideDrawer: !prevState.shouldOpenSideDrawer }
+        });
+    }
+
     render() {
         return (
             <Aux>
-                <Toolbar />
+                <Toolbar
+                    open={this.state.shouldOpenSideDrawer}
+                    hamburgerClicked={this.hamburgerClickHandler} />
                 <SideDrawer
                     open={this.state.shouldOpenSideDrawer}
                     closeDraw={this.sideDrawerCloseHandler} />

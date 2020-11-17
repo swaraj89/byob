@@ -7,13 +7,15 @@ import styles from './Toolbar.module.css';
 
 import Logo from '../Logo/Logo';
 import NavigationItems from './NavigationItems/NavigationItems';
+import Hamburger from '../Navigation/Hamburger/Hamburger';
 
 const toolbar = (props) => {
 
     return (
         <header className={styles.Toolbar}>
-            <div>Menu</div>
-
+            <Hamburger
+                isOpen={props.open}
+                clicked={props.hamburgerClicked} />
             <div className={styles.Logo}>
                 <Logo />
             </div>
