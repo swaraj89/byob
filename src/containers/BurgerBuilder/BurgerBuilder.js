@@ -24,7 +24,9 @@ class BurgerBuilder extends Component {
         },
         totalPrice: 40,
         purchasable: false,
-        purchasing: false
+        purchasing: false,
+        purchased: false,
+        isVegOnly: false
     }
 
     updatePurchaseState() {
@@ -96,6 +98,16 @@ class BurgerBuilder extends Component {
 
     purchaseContinueHandler = () => {
         console.warn("You are continuing with order....");
+        this.setState({
+            purchased: true,
+            purchasing: false
+        });
+    }
+
+    vegOnlyCheckboxChangeHandler = (evt) => {
+        this.setState({
+            isVegOnly: evt.target.checked
+        });
     }
 
     render() {
@@ -125,6 +137,8 @@ class BurgerBuilder extends Component {
                     price={this.state.totalPrice}
                     purchasable={this.state.purchasable}
                     ordered={this.purchaseHandler}
+                    onVegOnlyChecked={this.vegOnlyCheckboxChangeHandler}
+                    showVegOnly={this.state.isVegOnly}
                 />
             </Aux>
         );

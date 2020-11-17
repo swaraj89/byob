@@ -1,0 +1,10 @@
+.Checkbox{
+    text-decoration: underline ;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.Checkbox label,
+.Checkbox input{
+    cursor: pointer;
+ }

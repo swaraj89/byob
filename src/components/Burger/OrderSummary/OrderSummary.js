@@ -10,11 +10,19 @@ const OrderSummary = (props) => {
 
     const ingredientSummaryEl = Object.keys(props.ingredients)
         .map((igKey, index) => {
-            return (
-                <li key={index}>
-                    <span style={{ textTransform: 'capitalize' }}>{igKey}</span> : {props.ingredients[igKey]}
-                </li>
-            )
+
+            const qty = props.ingredients[igKey];
+            let ingredientSummary = null;
+
+            if (qty > 0) {
+                ingredientSummary = (
+                    <li key={index}>
+                        <span style={{ textTransform: 'capitalize' }}>{igKey}</span> : {props.ingredients[igKey]}
+                    </li>
+                )
+            }
+
+            return ingredientSummary;
         });
 
     return (
