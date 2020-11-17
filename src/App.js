@@ -7,10 +7,9 @@ import BurgerBuilder from "./containers/BurgerBuilder/BurgerBuilder";
 function App() {
   return (
     <div className="App">
-        <Layout>
-          <p>Test</p>
-          <BurgerBuilder></BurgerBuilder>
-        </Layout>
+      <Layout>
+        <BurgerBuilder></BurgerBuilder>
+      </Layout>
     </div>
   );
 }
